@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap');
+/* font-family: "Ruslan Display", sans-serif; */
+/* () – круглые скобки */
+/* [] – квадратные скобки */
+/* {} – фигурные скобки */
+
+* {
+    margin: 0; /* Отступы внешние */
+    padding: 0; /* отступы внутренние */
+}
+
+
+body {
+    background-image: url(images/bg.jpg);
+    /* Задний фон из картинки */
+    color: white
+        /* Цвет текста */
+
+}
+
+h1 {
+    font-size: 50px; /* размер шрифта */
+    /* font-family: Impact, sans-serif; */ /* шрифт */
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    /* text-align: center; */ /* выравнивание текста по центру */
+    text-transform: uppercase; /* весь текст заглавными буквами */
+
+    /* margin-top: 20px; */ /* отступ сверху */
+    /* margin-bottom: 20px; */ /* отступ снизу */
+    /* margin-left: 20px; */ /* отступ слева */
+    /* margin-right: 20px; */ /* отступ справа */
+
+    /* margin: 20px 20px 20px 20px; */ /* отступ сверху, справа, снизу, слева ПО ЧАСОВОЙ СТРЕЛКЕ */
+    /* margin: 20px 20px; */ /* отступы сверху-снизу и справа-слева */
+    /* margin: 20px; */ /* самая короткая запись когда отступы со всех сторон */
+
+    /* margin: 0 auto; */ /* 0 означает, что отступ сверху и снизу будет равен 0 а справа и слева равный */
+    /* background-color: orange;
+    padding: 50px; */
+}
+
+
+a {
+    color: white
+}
+
+.description {
+    color: orange;
+}
+
+.btn {
+    color: white;
+    background-color: orange;
+    padding: 20px;
+}
+
+.btn-blue {
+    background-color: blue;
+}
+
+.btn-green {
+    background-color: green;
+}
+
+.exit {
+    background-color: orange
+}
+.position {
+    background-color: rgb(213, 139, 0)
+}
+.korzina {
+    background-color: rgb(233, 156, 1)
+}
+.vk {
+    background-color: rgb(215, 143, 0)
+}
+.pay {
+    background-color: rgb(215, 143, 0)
+}
+.polsovatel {
+    background-color: rgb(178, 118, 0)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================================================================================== */
+.header {
+    margin-bottom: 30px;
+}
+
+.menu {
+    border: 2px solid blue;
+}
+
+.exit {
+    width: max-content;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    padding: 5px 15px;
+    border-radius: 40px;
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+}
+
+.header_title {
+    display: flex
+}
+.title-description {
+    text-align: left;
+}

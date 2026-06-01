@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: rgb(253, 213, 55);
+        }
+
+        header {
+            background-color: rgb(246, 186, 112);
+            padding: 40px;
+        }
+
+        .grids {
+            max-width: 1200px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background-color: rgb(230, 230, 230);
+            padding: 20px;
+        }
+
+        .grid-item {
+            padding: 20px;
+            font-size: 30px;
+            color: black;
+        }
+
+        .card-1 {
+            background-color: yellow;
+            grid-column: span 2;
+        }
+
+        .card-2 {
+            background-color: purple;
+            color: white;
+            grid-row: span 2;
+        }
+
+        .card-3 {
+            background-color: green;
+        }
+
+        .card-4 {
+            background-color: rgb(83, 194, 83);
+        }
+
+        .card-5 {
+            background-color: orange;
+            grid-row: span 2;
+        }
+
+        .card-6 {
+            background-color: blue;
+            color: white;
+            grid-column: span 2;
+        }
+
+        .card-7 {
+            background-color: green;
+        }
+
+        .card-8 {
+            background-color: rgb(239, 110, 175);
+            grid-row: span 2;
+        }
+
+        .card-9 {
+            background-color: green;
+        }
+
+        .card-10 {
+            background-color: pink;
+            grid-column: span 3;
+        }
+
+        footer {
+            background-color: rgb(107, 80, 42);
+            padding: 50px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>О нас</h1>
+    </header>
+
+    <main>
+
+        <div class="grids">
+
+            <div class="grid-item card-1">1</div>
+
+            <div class="grid-item card-2">2</div>
+
+            <div class="grid-item card-3">
+                3
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+
+            <div class="grid-item card-4">4</div>
+
+            <div class="grid-item card-5">5</div>
+
+            <div class="grid-item card-6">6</div>
+
+            <div class="grid-item card-7">7</div>
+
+            <div class="grid-item card-8">8</div>
+
+            <div class="grid-item card-9">9</div>
+
+            <div class="grid-item card-10">10</div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        Низ сайта
+    </footer>
+
+</body>
+
+</html>

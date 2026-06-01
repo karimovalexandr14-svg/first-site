@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            color: white;
+            font-family: sans-serif;
+            background-color: black;
+
+        }
+
+
+        .grid-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            /*   grid-template-columns: 1fr 1fr; */
+            /* grid-template-columns: repeat(3, 1fr); */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 10px;
+            /* Внутренние отступы */
+        }
+
+        .grid-item {
+            padding: 20px;
+            background-color: green;
+        }
+    </style>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <!-- 2 ряд с span -->
+     <div class="grid-container-2">
+        <style>
+            .grid-container-2 {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 10px;
+                margin-top: 50px;
+            }
+
+            .grid-container-2 .grid-item {
+                padding: 20px;
+                background-color: rgb(146, 135, 40);
+            }
+
+            .card-1 {
+                grid-column: span 2; /* Ширина ячейки с классом .card-1 */
+            }
+
+            .card-2 {
+                grid-row: span 2; /* Высота ячейки с классом .card-1 */
+            }
+
+            .card-3 {
+                grid-column: span 2; 
+            }
+
+            .grid-container-2 .card-4 {
+                grid-column: span 3; 
+                background-color:coral
+            }
+            .card-5 {
+                grid-row: span 2;
+            }
+        </style>
+
+        <div class="grid-item card-1">1</div>
+        <div class="grid-item card-2">2</div>
+        <div class="grid-item card-3">3</div>
+
+        <div class="grid-item card-4">4</div>
+        <div class="grid-item card-5">5</div>
+        <div class="grid-item card-6">6</div>
+
+        <div class="grid-item card-7">7</div>
+        <div class="grid-item card-8">8</div>
+        <div class="grid-item card-9">9</div>
+    </div>
+</body>
+
+</html>

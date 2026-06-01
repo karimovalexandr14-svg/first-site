@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Page</title>
+
+    <style>
+        body {
+            color: white;
+        }
+
+        .box-scale {
+            width: 50px;
+            height: 50px;
+            margin: 50px;
+            background-color: orange;
+
+            animation: boxScale 2s ease 1s infinite;
+
+            /*
+            // boxScale — название анимации
+            // 2s — длительность анимации
+            // ease — стиль анимации (timing-function: ease, linear и т.д.)
+            // 1s — задержка animation-delay перед началом
+            // infinite — бесконечное повторение, можно поставить число например 3 раза
+            */
+        }
+
+        /* keyframes — кадры анимации */
+        /* boxScale — название анимации (может быть любым) */
+        /* 0% — начало анимации, 50% — середина, 100% — конец */
+        @keyframes boxScale {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Увеличение блока -->
+    <div class="box-scale"></div>
+</body>
+</html>

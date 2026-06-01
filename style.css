@@ -1,0 +1,817 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Чтобы все размеры на сайте были точными */
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+@media (orientation: landscape) {
+            /* Стили, которые будут применены для устройств в альбомной ориентации */
+        }
+
+        @media (max-width: 600px) and (orientation: landscape) {
+            /* Стили, которые будут применены для устройств с шириной до 600 пикселей и альбомной ориентацией */
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) { 
+            /* Стили, которые будут применены для устройств с шириной от 768 до 1024 пикселей */
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================= Header ============================================ */
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Горизонтальное выравнивание */
+    background-color: rgba(128, 128, 128, 0.207);
+}
+
+.header__inner {
+    width: 100%;
+    max-width: 1500px;
+    /* максимальная ширина */
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Вертикальное выравнивание */
+
+    padding: 20px 10px;
+}
+
+nav {
+    padding: 20px;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+}
+
+.header__description h1 {
+    font-size: 50px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: 400;
+}
+
+.header__description h1 span {
+    color: #8e6811;
+}
+
+.header__description p {
+    line-height: 0;
+    font-size: 22px;
+    color: orange;
+}
+
+.header__inner .btn {
+    padding: 20px 40px;
+    border-radius: 20px;
+    background-color: orange;
+    color: white;
+    transition: 0.3s;
+}
+
+.header__inner .btn:hover {
+    background-color: rgb(255, 60, 0);
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================ Hero ============================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    max-width: 1500px;
+    padding: 0 10px;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero_description {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1500px;
+
+}
+
+.hero_description h1 {
+    font-size: 72px;
+}
+
+.hero_description p {
+    font-size: 32px;
+}
+
+@media (max-width: 1100px) {
+    .hero_description h1 {
+        font-size: 32px;
+    }
+
+    .hero_description p {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= Раздел с четыремя блоками ================= */
+.squares {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.squares__container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    /* Выравнивание текста по центру */
+    width: 50%;
+    min-width: 550px;
+    height: 300px;
+    color: rgb(255, 255, 255);
+    padding: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: antiquewhite;
+}
+
+.square1 {
+    background-image: url(images/nag.jpg);
+}
+
+.square2 {
+    background-image: url(images/piz.jpg);
+}
+
+.square3 {
+    background-image: url(images/shash.jpg);
+}
+
+.square4 {
+    background-image: url(images/bur.jpg);
+}
+
+.square h3 {
+    font-size: 30px;
+}
+
+/* При ширине экрана до 1100px делаем... */
+@media (max-width: 1100px) {
+    .square {
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    .square h3 {
+        font-size: 3rem;
+    }
+
+    .square p {
+        font-size: 1.5rem;
+    }
+
+}
+
+
+
+
+
+.squares__description {
+    margin: 50px 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Раздел с гридами */
+
+.grids {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.grids-description {
+    margin: 50px 0;
+}
+
+.grids-container {
+    display: grid;
+    /*   grid-template-columns: 1fr 1fr 1fr; */
+    /*  grid-template-columns: repeat(3, 1fr); */
+    /* сокращение для 1fr 1fr 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* автоматическая адаптация колонок */
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: rgb(243, 182, 0);
+    padding: 20px;
+    border: 1px solid white;
+}
+
+.grid-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    /* как обрезать картинку: cover, contain, fill */
+    margin-bottom: 15px;
+
+}
+
+.item__top {
+    display: flex;
+    align-items: center;
+
+}
+
+.item__top .item__top-right {
+    text-align: center;
+    width: 100%;
+}
+
+.item__middle {
+    margin: 30px 0;
+}
+
+.item__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Настройки для самих карточек */
+.grid-item-cola {
+    background: linear-gradient(45deg, #df6e0c, #fee3d7);
+    border-radius: 25px;
+}
+
+.grid-item-pizza {
+    background: linear-gradient(45deg, rgb(255, 206, 0), rgb(255, 193, 131));
+    border-radius: 25px;
+}
+
+.grid-item-fri {
+    background: linear-gradient(45deg, rgb(255, 240, 0), rgb(255, 150, 0));
+    border-radius: 25px;
+}
+
+.grid-item-sprite {
+    background: linear-gradient(45deg, rgb(169, 255, 0), rgb(100, 206, 0));
+    border-radius: 25px;
+}
+
+.grid-item-nagetsi {
+    background: linear-gradient(45deg, rgb(234, 148, 0), rgb(248, 255, 0));
+    border-radius: 20px;
+}
+
+.grid-item-gazirovka {
+    background: linear-gradient(45deg, rgb(69, 54, 4), rgb(219, 110, 0));
+    border-radius: 30px
+}
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Чтобы все размеры на сайте были точными */
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================= Header ============================================ */
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Горизонтальное выравнивание */
+    background-color: rgba(128, 128, 128, 0.207);
+}
+
+.header__inner {
+    width: 100%;
+    max-width: 1500px;
+    /* максимальная ширина */
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Вертикальное выравнивание */
+
+    padding: 20px 10px;
+}
+
+
+.header__description h1 {
+    font-size: 50px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: 400;
+}
+
+.header__description h1 span {
+    color: #8e6811;
+}
+
+.header__description p {
+    line-height: 0;
+    font-size: 22px;
+    color: orange;
+}
+
+.header__inner .btn {
+    padding: 20px 40px;
+    border-radius: 20px;
+    background-color: orange;
+    color: white;
+    transition: 0.3s;
+}
+
+.header__inner .btn:hover {
+    background-color: rgb(255, 60, 0);
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================ Hero ============================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    max-width: 1500px;
+    padding: 0 10px;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero_description {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1500px;
+
+}
+
+.hero_description h1 {
+    font-size: 72px;
+}
+
+.hero_description p {
+    font-size: 32px;
+}
+
+@media (max-width: 1100px) {
+    .hero_description h1 {
+        font-size: 32px;
+    }
+
+    .hero_description p {
+        font-size: 16px;
+    }
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    .header__inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .squares__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grids-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__description h1 {
+        font-size: 36px;
+    }
+    
+    .header__inner .btn {
+        padding: 10px 20px;
+    }
+    
+    .hero {
+        height: 60vh;
+    }
+    
+    .hero_description h1 {
+        font-size: 28px;
+    }
+    
+    .hero_description p {
+        font-size: 16px;
+    }
+    
+    .squares__description h2 {
+        font-size: 32px;
+    }
+    
+    .grids-description h2 {
+        font-size: 32px;
+    }
+    
+    .squares__container {
+        grid-template-columns: 1fr;
+    }
+    
+    .grids-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .squares {
+        padding: 40px 15px;
+    }
+    
+    .grids__inner {
+        padding: 40px 15px;
+    }
+    
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 480px) {
+    nav ul { 
+        gap: 12px;
+    }
+    
+    .square {
+        padding: 25px 15px;
+    }
+    
+    .grid-item {
+        padding: 15px;
+    }
+    
+    .item__top {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+footer {
+    width: 100%;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #111 0%, #181818 100%);
+    color: #e8e8e8;
+}
+
+.footer__inner {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer__left {
+    max-width: 320px;
+    min-width: 240px;
+}
+
+.footer__left img {
+    width: 140px;
+    max-width: 100%;
+    margin-bottom: 18px;
+    display: block;
+}
+
+.footer__left p {
+    color: #c7c7c7;
+    line-height: 1.8;
+    margin-top: 12px;
+}
+
+.footer__column {
+    min-width: 180px;
+    flex: 1;
+}
+
+.footer__column h2 {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.footer__column p {
+    margin-bottom: 12px;
+    color: #bdbdbd;
+}
+
+.footer__column p:last-child {
+    margin-bottom: 0;
+}
+
+.footer__column a {
+    color: #d8d8d8;
+    transition: color 0.2s ease;
+}
+
+.footer__column a:hover {
+    color: #ffb347;
+}
+
+.footer__bottom {
+    max-width: 1500px;
+    margin: 30px auto 0;
+    text-align: center;
+    color: #8c8c8c;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 1024px) {
+    .footer__inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__column,
+    .footer__left {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .footer__bottom {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 16px;
+    }
+
+    .footer__inner {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 30px 12px;
+    }
+
+    .footer__column h2 {
+        font-size: 1rem;
+    }
+
+    .footer__column p {
+        font-size: 0.95rem;
+    }
+}
+

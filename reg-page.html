@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/index.html">Главная</a>
+    <div class="reg-container">
+        <div class="reg-container__left">
+            <div class="reg-container-left_top">
+                <img src="images/logo-reg.png" alt="">
+            </div>
+            <div class="reg-container-left_bottom">
+                <h2>Добро Пожаловать</h2>
+                <p>в НЯМ.COM!</p>
+            </div>
+
+        </div>
+
+        <div class="reg-container__right">
+            <form action="">
+                <input type="text" placeholder="Логин" maxlength="10" required> <br>
+                <!-- type text - стандартное текстовое поле -->
+                <!-- Placeholder - подсказка для ввода -->
+                <!-- maxlength - максимальная длина лога -->
+                <!-- required - обязательный ввод -->
+
+                <input type="email" placeholder="Email" maxlength="50" required> <br>
+                <!-- type email - дает подсказку если забыл написать @ (собаку) -->
+
+                <input type="password" placeholder="Пароль" minlength="6" required> <br>
+                <!-- type password - скрывает вводимые символы -->
+                <!-- minlength 6 - минимальное количество символов -->
+                <button class="btn">Войти</button>
+
+                <div class="continue-with">
+    <span>Continue with</span>
+</div>
+
+<div class="Continue-with-btns">
+    <button class="continue-with-btn">Google</button>
+    <button class="continue-with-btn">Telegram</button>
+    <button class="continue-with-btn">Facebook</button>
+    <button class="continue-with-btn">TikTok</button>
+</div>
+            </form>
+
+            <div class=""></div>
+        </div>
+    </div>
+
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url(images/form-bg.jpg);
+            background-position: center;
+            
+        }
+
+        .reg-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            gap: 30px;
+            padding: 15px;
+
+            /* Эффект Стекла */
+            padding: 50px;
+            background-color: #ff9500;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.079);
+            backdrop-filter: blur(10px) saturate(120%);
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.079)
+        }
+
+        .reg-container__right {
+            background: rgb(113, 165, 255);
+            width: 50%;
+            color: black
+        }
+
+        .reg-container__left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 20px;
+            background-color: rgb(69, 159, 255);
+            background-position: 100%;
+            min-height: 450px;
+            background-position: center;
+            background-size: cover;
+            padding: 15px;
+        }
+
+        form {
+            /* Эффект Стекла */
+            width: 500px;
+            padding: 50px;
+            background-color: #ff9500;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.079);
+            /* бело-прозрачный */
+            backdrop-filter: blur(10px) saturate(120%);
+            /* размытие по  бокам */
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.079)
+        }
+
+        form input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 20px;
+            background-color: #ffffff05;
+
+            border: none;
+            border-radius: 12px;
+            background-color: rgba(240, 248, 255, 0);
+            backdrop-filter: blur(10px) saturate(120%);
+            box-shadow:
+                /* тени внутри и снаружи */
+                inset 0 1px 1px rgba(255, 255, 255, 0.6),
+                0 10px 10px rgba(0, 0, 0, 0.032);
+        }
+
+        input::placeholder {
+    color: #ffffff;
+}
+        
+
+        form .btn {
+            width: 100%;
+            padding: 20px;
+            margin-top: 50px;
+            text-align: center;
+            border-radius: 12px;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            background-color: rgba(240, 248, 255, 0);
+            backdrop-filter: blur(10px) saturate(120%);
+            box-shadow:
+                /* тени внутри и снаружи */
+                inset 0 1px 1px rgba(255, 255, 255, 0.6),
+                0 10px 10px rgba(0, 0, 0, 0.032);
+        }
+
+        form input:hover,
+        form .btn:hover {
+            background-color: #ffffff15;
+            box-shadow:
+                inset 0 2px 3px rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px) saturate(150%);
+            transform: translateY(-2px);
+            transition: 0.3;
+        }
+        
+        .continue-with {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.continue-with::before,
+.continue-with::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #dddddd;
+}
+
+.continue-with span {
+    padding: 0 10px;
+}
+
+.continue-with-btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+
+    background-color: royalblue;
+    color: white;
+}
+
+.continue-with-btns {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+    margin-top: 10px;
+}
+    </style>
+</body>
+
+</html>
