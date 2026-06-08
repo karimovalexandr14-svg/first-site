@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+
+    <meta name="robots" content="noindex">
+    <title>Регистрация</title>
 </head>
 
 <body>
@@ -107,6 +109,7 @@
         form {
             /* Эффект Стекла */
             width: 500px;
+            max-width: 100%;
             padding: 50px;
             background-color: #ff9500;
             border-radius: 25px;
@@ -201,6 +204,80 @@
     gap: 15px;
     margin-top: 10px;
 }
+
+
+        /* ===================== Адаптив ===================== */
+        @media (max-width: 900px) {
+            body {
+                padding: 20px 10px;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .reg-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .reg-container__left,
+            .reg-container__right {
+                width: 100%;
+            }
+
+            form {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .reg-container {
+                padding: 12px;
+            }
+
+            .reg-container__left {
+                min-height: auto;
+                padding: 12px;
+            }
+
+            .reg-container-left_top img {
+                max-width: 220px;
+                width: 100%;
+                height: auto;
+            }
+
+            .reg-container-left_bottom h2 {
+                font-size: 20px;
+            }
+
+            .reg-container-left_bottom p {
+                font-size: 14px;
+            }
+
+            form {
+                padding: 18px;
+            }
+
+            form input {
+                padding: 14px;
+            }
+
+            form .btn {
+                margin-top: 20px;
+                padding: 14px;
+            }
+
+            .continue-with-btns {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .continue-with-btn {
+                width: 100%;
+                max-width: 210px;
+            }
+        }
     </style>
 </body>
 
