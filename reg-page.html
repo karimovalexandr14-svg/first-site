@@ -207,7 +207,7 @@
 
 
         /* ===================== Адаптив ===================== */
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
             body {
                 padding: 20px 10px;
                 height: auto;
@@ -230,10 +230,27 @@
             }
         }
 
-        @media (max-width: 560px) {
+        @media (max-width: 480px) {
+            /* Сверху — приветствие, снизу — само окно регистрации */
+            body {
+                justify-content: flex-start;
+            }
+
             .reg-container {
                 padding: 12px;
+                justify-content: flex-start;
             }
+
+            /* Левая часть (приветствие) будет сверху */
+            .reg-container__left {
+                order: 1;
+            }
+
+            /* Правая часть (форма) будет снизу */
+            .reg-container__right {
+                order: 2;
+            }
+
 
             .reg-container__left {
                 min-height: auto;
