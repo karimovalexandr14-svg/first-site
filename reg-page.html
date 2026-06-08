@@ -8,54 +8,6 @@
 
     <meta name="robots" content="noindex">
     <title>Регистрация</title>
-</head>
-
-<body>
-    <a href="/index.html">Главная</a>
-    <div class="reg-container">
-        <div class="reg-container__left">
-            <div class="reg-container-left_top">
-                <img src="images/logo-reg.png" alt="">
-            </div>
-            <div class="reg-container-left_bottom">
-                <h2>Добро Пожаловать</h2>
-                <p>в НЯМ.COM!</p>
-            </div>
-
-        </div>
-
-        <div class="reg-container__right">
-            <form action="">
-                <input type="text" placeholder="Логин" maxlength="10" required> <br>
-                <!-- type text - стандартное текстовое поле -->
-                <!-- Placeholder - подсказка для ввода -->
-                <!-- maxlength - максимальная длина лога -->
-                <!-- required - обязательный ввод -->
-
-                <input type="email" placeholder="Email" maxlength="50" required> <br>
-                <!-- type email - дает подсказку если забыл написать @ (собаку) -->
-
-                <input type="password" placeholder="Пароль" minlength="6" required> <br>
-                <!-- type password - скрывает вводимые символы -->
-                <!-- minlength 6 - минимальное количество символов -->
-                <button class="btn">Войти</button>
-
-                <div class="continue-with">
-    <span>Continue with</span>
-</div>
-
-<div class="Continue-with-btns">
-    <button class="continue-with-btn">Google</button>
-    <button class="continue-with-btn">Telegram</button>
-    <button class="continue-with-btn">Facebook</button>
-    <button class="continue-with-btn">TikTok</button>
-</div>
-            </form>
-
-            <div class=""></div>
-        </div>
-    </div>
-
 
     <style>
         body {
@@ -66,7 +18,7 @@
             justify-content: center;
             background-image: url(images/form-bg.jpg);
             background-position: center;
-            
+
         }
 
         .reg-container {
@@ -138,9 +90,9 @@
         }
 
         input::placeholder {
-    color: #ffffff;
-}
-        
+            color: #ffffff;
+        }
+
 
         form .btn {
             width: 100%;
@@ -168,42 +120,42 @@
             transform: translateY(-2px);
             transition: 0.3;
         }
-        
+
         .continue-with {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    color: #ffffff;
-    font-size: 14px;
-}
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            color: #ffffff;
+            font-size: 14px;
+        }
 
-.continue-with::before,
-.continue-with::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #dddddd;
-}
+        .continue-with::before,
+        .continue-with::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #dddddd;
+        }
 
-.continue-with span {
-    padding: 0 10px;
-}
+        .continue-with span {
+            padding: 0 10px;
+        }
 
-.continue-with-btn {
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: none;
+        .continue-with-btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
 
-    background-color: royalblue;
-    color: white;
-}
+            background-color: royalblue;
+            color: white;
+        }
 
-.continue-with-btns {
-    display: flex;
-    justify-content: center; 
-    gap: 15px;
-    margin-top: 10px;
-}
+        .continue-with-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
 
 
         /* ===================== Адаптив ===================== */
@@ -231,6 +183,7 @@
         }
 
         @media (max-width: 480px) {
+
             /* Сверху — приветствие, снизу — само окно регистрации */
             body {
                 justify-content: flex-start;
@@ -296,6 +249,53 @@
             }
         }
     </style>
+</head>
+
+<body>
+    <a href="/index.html">Главная222</a>
+    <div class="reg-container">
+        <div class="reg-container__left">
+            <div class="reg-container-left_top">
+                <img src="images/logo-reg.png" alt="">
+            </div>
+            <div class="reg-container-left_bottom">
+                <h2>Добро Пожаловать</h2>
+                <p>в НЯМ.COM!</p>
+            </div>
+
+        </div>
+
+        <div class="reg-container__right">
+            <form action="">
+                <input type="text" placeholder="Логин" maxlength="10" required> <br>
+                <!-- type text - стандартное текстовое поле -->
+                <!-- Placeholder - подсказка для ввода -->
+                <!-- maxlength - максимальная длина лога -->
+                <!-- required - обязательный ввод -->
+
+                <input type="email" placeholder="Email" maxlength="50" required> <br>
+                <!-- type email - дает подсказку если забыл написать @ (собаку) -->
+
+                <input type="password" placeholder="Пароль" minlength="6" required> <br>
+                <!-- type password - скрывает вводимые символы -->
+                <!-- minlength 6 - минимальное количество символов -->
+                <button class="btn">Войти</button>
+
+                <div class="continue-with">
+                    <span>Continue with</span>
+                </div>
+
+                <div class="Continue-with-btns">
+                    <button class="continue-with-btn">Google</button>
+                    <button class="continue-with-btn">Telegram</button>
+                    <button class="continue-with-btn">Facebook</button>
+                    <button class="continue-with-btn">TikTok</button>
+                </div>
+            </form>
+
+            <div class=""></div>
+        </div>
+    </div>
 </body>
 
 </html>
