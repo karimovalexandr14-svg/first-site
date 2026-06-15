@@ -2,18 +2,41 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTt.me/nftscrapbot?start=battle107-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Мета-тег для Telegram бота -->
+    <meta name="telegram" content="t.me/nftscrapbot?start=battle107-8">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-
-    <!-- Стили CSS прямо в HTML -->
-    <style>
-        /* Вынесли стили в отдельный файл style.css */
-    </style>
+    <title>Ням.com - Доставка вкусной еды</title>
+    
+    <!-- Подключаем шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Модальное окно -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription" class="modal-description"></p>
+                    <div class="modal-reviews">
+                        <h3>Отзывы наших клиентов</h3>
+                        <div id="modalReviews" class="reviews-grid"></div>
+                    </div>
+                    <div id="modalPrice" class="modal-price"></div>
+                    <button class="modal-buy" onclick="window.location.href='reg-page.html'">Оформить заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header - Верх Сайта -->
     <header>
         <div class="header__inner">
@@ -23,134 +46,107 @@
             </div>
 
             <!-- МЕНЮ -->
-             <nav>
+            <nav>
                 <ul>
-                    <li><a href="">Пицца</a></li>
-                    <li><a href="">Бургеры</a></li>
-                    <li><a href="">Напитки</a></li>
+                    <li><a href="#squares">Пицца</a></li>
+                    <li><a href="#squares">Бургеры</a></li>
+                    <li><a href="#grids">Напитки</a></li>
                 </ul>
-             </nav>
+            </nav>
             <a href="reg-page.html" class="btn">ВЫХОД</a>
         </div>
-        <a href=""></a>
     </header>
-
 
     <!-- Основной контент -->
     <main>
         <!-- Hero - главная картинка -->
         <section class="hero">
-            <img src="images/hero.webp" alt="">
+            <img src="images/hero.webp" alt="Вкусная еда">
 
             <div class="hero__inner">
                 <div class="hero_description">
-                    <h1>Lorem ipsum, dolor sit amet consectetur </h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Distinctio numquam neque aliquid nostrum nemo error totam recusandae, rem nisi
-                        molestiae possimus autem, aut quis adipisci modi quod nihil quo consequatur.</p>
+                    <h1>Доставка вкусной еды</h1>
+                    <p>Самые сочные бургеры, хрустящая картошка фри и освежающие напитки. Быстрая доставка по всему городу!</p>
                 </div>
-
             </div>
         </section>
 
-
-        <!-- КВАДРАТЫ -->
-        <section class="squares">
+        <!-- КВАДРАТЫ (Наши хиты) - теперь 2 в 2 ряда -->
+        <section class="squares" id="squares">
             <div class="squares__description">
-                <h2>Lorem ipsum dolor sit amet.</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit repellendus rem laboriosam sint
-                    blanditiis,
-                    numquam impedit beatae culpa dolorem eum ad ipsum at odio quae amet, quos provident. Amet, porro!
-                </p>
+                <h2>Наши хиты</h2>
+                <p>Самые популярные блюда, которые выбирают наши гости</p>
             </div>
 
             <div class="squares__container">
-                <div class="square square1">
-                    <h3>Заголовок 1</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Velit minus aliquam quasi sit amet.
-                    </p>
+                <div class="square square1" onclick="openModal('nagetsi')">
+                    <h3>Хрустящие Нагетсы</h3>
+                    <p>Нежные куриные нагетсы в золотистой панировке. Подаются с тремя видами соусов. Идеальный перекус!</p>
                 </div>
 
-                <div class="square square2">
-                    <h3>Заголовок 2</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Velit minus aliquam quasi sit amet.
-                    </p>
+                <div class="square square2" onclick="openModal('pizza')">
+                    <h3>Пицца Пепперони</h3>
+                    <p>Классическая итальянская пицца с острыми колбасками пепперони, сыром моцарелла и томатным соусом.</p>
                 </div>
 
-            
-                <div class="square square3">
-                    <h3>Заголовок 3</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Velit minus aliquam quasi sit amet.
-                    </p>
+                <div class="square square3" onclick="openModal('shashlik')">
+                    <h3>Шашлык из Свинины</h3>
+                    <p>Сочный шашлык, приготовленный на углях по особому рецепту. Маринуется 12 часов в специях.</p>
                 </div>
 
-                <div class="square square4">
-                    <h3>Заголовок 4</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Velit minus aliquam quasi sit amet.
-                    </p>
+                <div class="square square4" onclick="openModal('burger')">
+                    <h3>Двойной Бургер</h3>
+                    <p>Две сочные говяжьи котлеты, расплавленный сыр чеддер, хрустящий бекон и свежие овощи.</p>
                 </div>
             </div>
-
         </section>
 
-
         <!-- Работа с гридами -->
-        <section class="grids">
+        <section class="grids" id="grids">
             <div class="grids__inner">
                 <!-- Описание всего раздела -->
                 <div class="grids-description">
-                    <h2>Lorem ipsum dolor sit amet.</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <h2>Популярное меню</h2>
+                    <p>Выберите блюда по своему вкусу</p>
                 </div>
 
                 <!-- Основной контейнер для карточек -->
                 <div class="grids-container">
 
                     <!-- блок c колой-->
-                    <div class="grid-item grid-item-cola">
-
+                    <div class="grid-item grid-item-cola" onclick="openModal('cola')">
                         <!-- Верх -->
                         <div class="item__top">
                             <div class="item__top-left">
-                                <img src="images/coca-cola.png" alt="">
+                                <img src="images/coca-cola.png" alt="Coca-Cola">
                             </div>
                             <div class="item__top-right">
-                                <h3>Напиток</h3>
+                                <h3>Coca-Cola</h3>
                             </div>
                         </div>
 
                         <!-- Середина -->
                         <div class="item__middle">
-                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta perspiciatis corrupti
-                                perferendis temporibus laudantium deleniti earum dolores laborum maiores doloribus.</h3>
+                            <p>Классическая Coca-Cola - освежающий напиток с неповторимым вкусом. Идеально подходит для любого приема пищи и отлично утоляет жажду.</p>
                         </div>
 
                         <!-- Низ -->
                         <div class="item__bottom">
                             <div class="item__bottom-left">
-                                <h3>100Р</h3>
+                                <h3>150₽</h3>
                             </div>
                             <div class="item__bottom-right">
-                                <a href="#" class="btn">Купить</a>
+                                <a href="#" class="btn" onclick="event.stopPropagation()">Купить</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- блок Фри -->
-                    <div class="grid-item grid-item-fri">
-
+                    <div class="grid-item grid-item-fri" onclick="openModal('fri')">
                         <!-- Верх -->
                         <div class="item__top">
                             <div class="item__top-left">
-                                <img src="images/Fri.png" alt="">
+                                <img src="images/Fri.png" alt="Картошка Фри">
                             </div>
                             <div class="item__top-right">
                                 <h3>Картошка Фри</h3>
@@ -159,137 +155,128 @@
 
                         <!-- Середина -->
                         <div class="item__middle">
-                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta perspiciatis corrupti
-                                perferendis temporibus laudantium deleniti earum dolores laborum maiores doloribus.</h3>
+                            <p>Хрустящая картошка фри, приготовленная из свежего картофеля. Золотистая снаружи и мягкая внутри. Подается с фирменным соусом.</p>
                         </div>
 
                         <!-- Низ -->
                         <div class="item__bottom">
                             <div class="item__bottom-left">
-                                <h3>100Р</h3>
+                                <h3>120₽</h3>
                             </div>
                             <div class="item__bottom-right">
-                                <a href="#" class="btn">Купить</a>
+                                <a href="#" class="btn" onclick="event.stopPropagation()">Купить</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- блок Нагетсы-->
-                    <div class="grid-item grid-item-nagetsi">
-
+                    <div class="grid-item grid-item-nagetsi" onclick="openModal('nagetsi')">
                         <!-- Верх -->
                         <div class="item__top">
                             <div class="item__top-left">
-                                <img src="images/Nagetsi.png" alt="">
+                                <img src="images/Nagetsi.png" alt="Нагетсы">
                             </div>
                             <div class="item__top-right">
-                                <h3>Нагетсы</h3>
+                                <h3>Куриные Нагетсы</h3>
                             </div>
                         </div>
 
                         <!-- Середина -->
                         <div class="item__middle">
-                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta perspiciatis corrupti
-                                perferendis temporibus laudantium deleniti earum dolores laborum maiores doloribus.</h3>
+                            <p>Нежные куриные нагетсы в хрустящей панировке. Приготовлены из куриного филе высшего качества. Подаются с тремя видами соусов.</p>
                         </div>
 
                         <!-- Низ -->
                         <div class="item__bottom">
                             <div class="item__bottom-left">
-                                <h3>100Р</h3>
+                                <h3>180₽</h3>
                             </div>
                             <div class="item__bottom-right">
-                                <a href="#" class="btn">Купить</a>
+                                <a href="#" class="btn" onclick="event.stopPropagation()">Купить</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- блок Пицца-->
-                    <div class="grid-item grid-item-pizza">
-
+                    <div class="grid-item grid-item-pizza" onclick="openModal('pizza')">
                         <!-- Верх -->
                         <div class="item__top">
                             <div class="item__top-left">
-                                <img src="images/mini-pizza.png" alt="">
+                                <img src="images/mini-pizza.png" alt="Пицца">
                             </div>
                             <div class="item__top-right">
-                                <h3>Пицца</h3>
+                                <h3>Пицца Маргарита</h3>
                             </div>
                         </div>
 
                         <!-- Середина -->
                         <div class="item__middle">
-                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta perspiciatis corrupti
-                                perferendis temporibus laudantium deleniti earum dolores laborum maiores doloribus.</h3>
+                            <p>Классическая итальянская пицца на тонком тесте. Состав: томатный соус, свежая моцарелла, ароматный базилик и оливковое масло.</p>
                         </div>
 
                         <!-- Низ -->
                         <div class="item__bottom">
                             <div class="item__bottom-left">
-                                <h3>100Р</h3>
+                                <h3>450₽</h3>
                             </div>
                             <div class="item__bottom-right">
-                                <a href="#" class="btn">Купить</a>
+                                <a href="#" class="btn" onclick="event.stopPropagation()">Купить</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- блок Спрайт-->
-                    <div class="grid-item grid-item-sprite">
-
+                    <div class="grid-item grid-item-sprite" onclick="openModal('sprite')">
                         <!-- Верх -->
                         <div class="item__top">
                             <div class="item__top-left">
-                                <img src="images/sprite.png" alt="">
+                                <img src="images/sprite.png" alt="Sprite">
                             </div>
                             <div class="item__top-right">
-                                <h3>Спрайт</h3>
+                                <h3>Sprite</h3>
                             </div>
                         </div>
 
                         <!-- Середина -->
                         <div class="item__middle">
-                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta perspiciatis corrupti
-                                perferendis temporibus laudantium deleniti earum dolores laborum maiores doloribus.</h3>
+                            <p>Освежающий лимонад с цитрусовым вкусом. Идеально утоляет жажду в жаркий день. Без искусственных красителей.</p>
                         </div>
 
                         <!-- Низ -->
                         <div class="item__bottom">
                             <div class="item__bottom-left">
-                                <h3>100Р</h3>
+                                <h3>130₽</h3>
                             </div>
                             <div class="item__bottom-right">
-                                <a href="#" class="btn">Купить</a>
+                                <a href="#" class="btn" onclick="event.stopPropagation()">Купить</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- блок Газировка-->
-                    <div class="grid-item grid-item-gazirovka">
-
+                    <div class="grid-item grid-item-gazirovka" onclick="openModal('gazirovka')">
                         <!-- Верх -->
                         <div class="item__top">
                             <div class="item__top-left">
-                                <img src="images/gazirovka.png" alt="">
+                                <img src="images/gazirovka.png" alt="Fanta">
                             </div>
                             <div class="item__top-right">
-                                <h3>Газировка</h3>
+                                <h3>Fanta</h3>
                             </div>
                         </div>
 
                         <!-- Середина -->
                         <div class="item__middle">
-                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta perspiciatis corrupti
-                                perferendis temporibus laudantium deleniti earum dolores laborum maiores doloribus.</h3>
+                            <p>Апельсиновая газировка с ярким цитрусовым вкусом. Освежает и поднимает настроение. Подается охлажденной.</p>
                         </div>
 
                         <!-- Низ -->
                         <div class="item__bottom">
                             <div class="item__bottom-left">
-                                <h3>100Р</h3>
+                                <h3>130₽</h3>
                             </div>
                             <div class="item__bottom-right">
-                                <a href="#" class="btn">Купить</a>
+                                <a href="#" class="btn" onclick="event.stopPropagation()">Купить</a>
                             </div>
                         </div>
                     </div>
@@ -297,7 +284,6 @@
             </div>
         </section>
     </main>
-
 
     <!-- Footer -->
     <footer>
@@ -318,9 +304,10 @@
 
             <div class="footer__column">
                 <h2>Каталог</h2>
-                <p><a href="#">Пункт</a></p>
-                <p><a href="#">Пункт</a></p>
-                <p><a href="#">Пункт</a></p>
+                <p><a href="#">Пицца</a></p>
+                <p><a href="#">Бургеры</a></p>
+                <p><a href="#">Напитки</a></p>
+                <p><a href="#">Закуски</a></p>
             </div>
 
             <div class="footer__column">
@@ -336,6 +323,149 @@
             <p>© 2026 Ням.com — вкусные решения для вашего меню</p>
         </div>
     </footer>
+
+    <script>
+        // Данные о продуктах с отзывами
+        const products = {
+            cola: {
+                name: "Coca-Cola",
+                image: "images/coca-cola.png",
+                description: "Классическая Coca-Cola - освежающий напиток с неповторимым вкусом. Идеально подходит для любого приема пищи и отлично утоляет жажду. Подается в охлажденном виде. Объем: 0.5л.",
+                price: "150₽",
+                reviews: [
+                    { author: "Анна С.", text: "Любимая кола! Всегда свежая и холодная." },
+                    { author: "Максим К.", text: "Отличный напиток, быстрая доставка." },
+                    { author: "Елена П.", text: "Классический вкус, который никогда не надоедает." },
+                    { author: "Дмитрий В.", text: "Хорошая кола, рекомендую!" }
+                ]
+            },
+            fri: {
+                name: "Картошка Фри",
+                image: "images/Fri.png",
+                description: "Хрустящая картошка фри, приготовленная из свежего картофеля. Золотистая снаружи и мягкая внутри. Подается с фирменным соусом. Порция: 150г.",
+                price: "120₽",
+                reviews: [
+                    { author: "Иван Н.", text: "Очень вкусная, хрустящая!" },
+                    { author: "Ольга М.", text: "Лучшая картошка фри в городе." },
+                    { author: "Сергей Д.", text: "Горячая и свежая, отлично подходит к бургеру." },
+                    { author: "Наталья К.", text: "Хрустящая корочка, внутри мягкая - идеально!" }
+                ]
+            },
+            nagetsi: {
+                name: "Куриные Нагетсы",
+                image: "images/Nagetsi.png",
+                description: "Нежные куриные нагетсы в хрустящей панировке. Приготовлены из куриного филе высшего качества. Подаются с тремя видами соусов на выбор: сырный, барбекю или кисло-сладкий. Порция: 200г.",
+                price: "180₽",
+                reviews: [
+                    { author: "Алексей П.", text: "Сочные и нежные, отличная панировка." },
+                    { author: "Мария И.", text: "Дети просто обожают эти нагетсы!" },
+                    { author: "Павел С.", text: "Хорошее мясо, вкусные соусы." },
+                    { author: "Кристина А.", text: "Заказываю постоянно, очень вкусно." }
+                ]
+            },
+            pizza: {
+                name: "Пицца Маргарита",
+                image: "images/mini-pizza.png",
+                description: "Классическая итальянская пицца на тонком тесте. Состав: томатный соус, свежая моцарелла, ароматный базилик и оливковое масло. Диаметр: 30см.",
+                price: "450₽",
+                reviews: [
+                    { author: "Роман К.", text: "Настоящая итальянская пицца!" },
+                    { author: "Алина С.", text: "Тонкое тесто, много сыра - обалденно." },
+                    { author: "Виктор М.", text: "Очень вкусно, буду заказывать еще." },
+                    { author: "Светлана Д.", text: "Лучшая пицца в доставке!" }
+                ]
+            },
+            sprite: {
+                name: "Sprite",
+                image: "images/sprite.png",
+                description: "Освежающий лимонад с цитрусовым вкусом. Идеально утоляет жажду в жаркий день. Без искусственных красителей. Объем: 0.5л.",
+                price: "130₽",
+                reviews: [
+                    { author: "Даниил Р.", text: "Освежает отлично, вкус как надо." },
+                    { author: "Юлия В.", text: "Люблю спрайт, всегда заказываю." },
+                    { author: "Андрей Т.", text: "Хорошая газировка, рекомендую." },
+                    { author: "Екатерина Н.", text: "Отличный вкус, всегда холодный." }
+                ]
+            },
+            gazirovka: {
+                name: "Fanta",
+                image: "images/gazirovka.png",
+                description: "Апельсиновая газировка с ярким цитрусовым вкусом. Освежает и поднимает настроение. Подается охлажденной. Объем: 0.5л.",
+                price: "130₽",
+                reviews: [
+                    { author: "Глеб О.", text: "Ностальгический вкус, очень нравится." },
+                    { author: "Татьяна А.", text: "Хорошая газировка, быстрая доставка." },
+                    { author: "Олег И.", text: "Вкусная и освежающая." },
+                    { author: "Ирина К.", text: "Люблю эту газировку с детства." }
+                ]
+            },
+            shashlik: {
+                name: "Шашлык из Свинины",
+                image: "images/shash.jpg",
+                description: "Сочный шашлык, приготовленный на углях по особому рецепту. Маринуется 12 часов в специях. Подается с соусом и свежими овощами. Порция: 300г.",
+                price: "350₽",
+                reviews: [
+                    { author: "Артем Л.", text: "Очень сочный и ароматный!" },
+                    { author: "Ирина П.", text: "Лучший шашлык на доставке." },
+                    { author: "Владимир С.", text: "Мясо тает во рту." },
+                    { author: "Елена К.", text: "Отличная порция, вкусный." }
+                ]
+            },
+            burger: {
+                name: "Двойной Бургер",
+                image: "images/bur.jpg",
+                description: "Две сочные говяжьи котлеты, расплавленный сыр чеддер, хрустящий бекон, свежие овощи и фирменный соус. Вес: 350г.",
+                price: "380₽",
+                reviews: [
+                    { author: "Максим Д.", text: "Огромный и очень вкусный!" },
+                    { author: "Анна В.", text: "Сочный бургер, много начинки." },
+                    { author: "Денис М.", text: "Лучший бургер в городе." },
+                    { author: "Ольга С.", text: "Очень сытный и вкусный." }
+                ]
+            }
+        };
+
+        // Функция открытия модального окна
+        function openModal(productId) {
+            const product = products[productId];
+            if (!product) return;
+
+            document.getElementById('modalImage').src = product.image;
+            document.getElementById('modalTitle').innerText = product.name;
+            document.getElementById('modalDescription').innerText = product.description;
+            document.getElementById('modalPrice').innerText = product.price;
+
+            const reviewsContainer = document.getElementById('modalReviews');
+            reviewsContainer.innerHTML = '';
+            
+            product.reviews.forEach(review => {
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-card';
+                reviewCard.innerHTML = `
+                    <div class="review-author">${review.author}</div>
+                    <div class="review-text">"${review.text}"</div>
+                `;
+                reviewsContainer.appendChild(reviewCard);
+            });
+
+            document.getElementById('productModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Закрытие модального окна
+        document.querySelector('.modal-close').addEventListener('click', function() {
+            document.getElementById('productModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 
 </html>

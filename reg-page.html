@@ -1,131 +1,341 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-
     <meta name="robots" content="noindex">
-    <title>Регистрация</title>
-
+    <title>Регистрация | Ням.com</title>
+    
+    <!-- Подключаем шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-image: url(images/form-bg.jpg);
-            background-position: center;
-
+            position: relative;
+            background: #0a0a0a;
         }
 
+        /* Статический фон в оранжево-черных цветах */
+        .static-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+        }
+
+        /* Оранжевые акцентные линии */
+        .accent-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff8c00, #ff5500, #ff8c00);
+            z-index: 100;
+        }
+
+        /* Декоративные оранжевые круги (статичные) */
+        .decor-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .decor-circles div {
+            position: absolute;
+            display: block;
+            list-style: none;
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .decor-circles div:nth-child(1) {
+            left: 10%;
+            top: 20%;
+            width: 300px;
+            height: 300px;
+            background: #ff8c00;
+        }
+        .decor-circles div:nth-child(2) {
+            right: 5%;
+            bottom: 10%;
+            width: 400px;
+            height: 400px;
+            background: #ff5500;
+        }
+        .decor-circles div:nth-child(3) {
+            left: 20%;
+            bottom: 30%;
+            width: 200px;
+            height: 200px;
+            background: #ff8c00;
+        }
+        .decor-circles div:nth-child(4) {
+            right: 30%;
+            top: 10%;
+            width: 250px;
+            height: 250px;
+            background: #ff5500;
+        }
+        .decor-circles div:nth-child(5) {
+            left: 60%;
+            bottom: 20%;
+            width: 150px;
+            height: 150px;
+            background: #ff8c00;
+        }
+
+        /* Кнопка назад */
+        .back-link {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 24px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 140, 0, 0.3);
+        }
+
+        .back-link:hover {
+            background: #ff8c00;
+            transform: translateX(-5px);
+            border-color: #ff8c00;
+            color: black;
+        }
+
+        .back-link i {
+            font-size: 18px;
+        }
+
+        /* Контейнер регистрации */
         .reg-container {
             width: 100%;
             max-width: 1200px;
             display: flex;
             gap: 30px;
-            padding: 15px;
-
-            /* Эффект Стекла */
-            padding: 50px;
-            background-color: #ff9500;
-            border-radius: 25px;
-            background-color: rgba(255, 255, 255, 0.079);
-            backdrop-filter: blur(10px) saturate(120%);
-            border-radius: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.079)
+            padding: 20px;
+            margin: 80px 20px;
+            position: relative;
+            z-index: 1;
         }
 
-        .reg-container__right {
-            background: rgb(113, 165, 255);
-            width: 50%;
-            color: black
-        }
-
+        /* Левая часть - приветствие */
         .reg-container__left {
             width: 50%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            border-radius: 20px;
-            background-color: rgb(69, 159, 255);
-            background-position: 100%;
-            min-height: 450px;
-            background-position: center;
-            background-size: cover;
-            padding: 15px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            transition: transform 0.3s ease;
+            /* Фиксированная высота, чтобы совпадала с правой частью */
+            min-height: 600px;
+        }
+
+        .reg-container__left:hover {
+            transform: translateY(-5px);
+            border-color: #ff8c00;
+            box-shadow: 0 20px 40px rgba(255, 140, 0, 0.1);
+        }
+
+        .reg-container-left_top {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        /* Огромный логотип по центру */
+        .reg-container-left_top img {
+            max-width: 350px;
+            width: 90%;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.4));
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1400px) {
+            .reg-container-left_top img {
+                max-width: 400px;
+            }
+        }
+
+        .reg-container-left_bottom {
+            text-align: center;
+            color: white;
+            width: 100%;
+        }
+
+        .reg-container-left_bottom h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff, #ff8c00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .reg-container-left_bottom p {
+            font-size: 22px;
+            opacity: 0.9;
+            letter-spacing: 2px;
+            color: #ff8c00;
+        }
+
+        .features {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .feature-item i {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 140, 0, 0.2);
+            border-radius: 50%;
+            color: #ff8c00;
+        }
+
+        /* Правая часть - форма */
+        .reg-container__right {
+            width: 50%;
+            display: flex;
         }
 
         form {
-            /* Эффект Стекла */
-            width: 500px;
-            max-width: 100%;
-            padding: 50px;
-            background-color: #ff9500;
-            border-radius: 25px;
-            background-color: rgba(255, 255, 255, 0.079);
-            /* бело-прозрачный */
-            backdrop-filter: blur(10px) saturate(120%);
-            /* размытие по  бокам */
-            border-radius: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.079)
+            width: 100%;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Фиксированная высота, чтобы совпадала с левой частью */
+            min-height: 600px;
+        }
+
+        form:hover {
+            border-color: #ff8c00;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        form h3 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        form h3 i {
+            color: #ff8c00;
+            margin-right: 10px;
         }
 
         form input {
             width: 100%;
-            margin-bottom: 10px;
-            padding: 20px;
-            background-color: #ffffff05;
-
-            border: none;
-            border-radius: 12px;
-            background-color: rgba(240, 248, 255, 0);
-            backdrop-filter: blur(10px) saturate(120%);
-            box-shadow:
-                /* тени внутри и снаружи */
-                inset 0 1px 1px rgba(255, 255, 255, 0.6),
-                0 10px 10px rgba(0, 0, 0, 0.032);
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 140, 0, 0.2);
+            border-radius: 15px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
 
-        input::placeholder {
-            color: #ffffff;
+        form input:focus {
+            outline: none;
+            border-color: #ff8c00;
+            background: rgba(255, 140, 0, 0.05);
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.1);
         }
 
+        form input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
 
         form .btn {
             width: 100%;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 16px;
+            margin-top: 20px;
             text-align: center;
-            border-radius: 12px;
+            border-radius: 15px;
             border: none;
-            border-radius: 12px;
-            color: white;
-            background-color: rgba(240, 248, 255, 0);
-            backdrop-filter: blur(10px) saturate(120%);
-            box-shadow:
-                /* тени внутри и снаружи */
-                inset 0 1px 1px rgba(255, 255, 255, 0.6),
-                0 10px 10px rgba(0, 0, 0, 0.032);
+            color: black;
+            font-size: 16px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff8c00, #ff5500);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        form input:hover,
         form .btn:hover {
-            background-color: #ffffff15;
-            box-shadow:
-                inset 0 2px 3px rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(15px) saturate(150%);
             transform: translateY(-2px);
-            transition: 0.3;
+            box-shadow: 0 10px 25px rgba(255, 140, 0, 0.3);
+            background: linear-gradient(135deg, #ff9f2e, #ff661a);
         }
 
         .continue-with {
             display: flex;
             align-items: center;
-            margin: 20px 0;
-            color: #ffffff;
+            margin: 30px 0 20px;
+            color: rgba(255, 255, 255, 0.6);
             font-size: 14px;
         }
 
@@ -134,29 +344,63 @@
             content: "";
             flex: 1;
             height: 1px;
-            background: #dddddd;
+            background: rgba(255, 140, 0, 0.3);
         }
 
         .continue-with span {
-            padding: 0 10px;
-        }
-
-        .continue-with-btn {
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: none;
-
-            background-color: royalblue;
-            color: white;
+            padding: 0 15px;
         }
 
         .continue-with-btns {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
+        .continue-with-btn {
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .continue-with-btn i {
+            font-size: 16px;
+            color: #ff8c00;
+        }
+
+        .continue-with-btn:hover {
+            background: rgba(255, 140, 0, 0.2);
+            border-color: #ff8c00;
+            transform: translateY(-2px);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .login-link a:hover {
+            color: #ff5500;
+            text-decoration: underline;
+        }
 
         /* ===================== Адаптив ===================== */
         @media (max-width: 1024px) {
@@ -168,8 +412,9 @@
 
             .reg-container {
                 flex-direction: column;
-                gap: 20px;
-                padding: 20px;
+                gap: 25px;
+                padding: 15px;
+                margin: 60px 15px;
             }
 
             .reg-container__left,
@@ -177,123 +422,239 @@
                 width: 100%;
             }
 
+            .reg-container__left {
+                min-height: auto;
+                padding: 40px 30px;
+            }
+
             form {
-                width: 100%;
+                min-height: auto;
+                padding: 40px;
+            }
+
+            .reg-container-left_top img {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .back-link {
+                top: 20px;
+                left: 20px;
+                padding: 8px 18px;
+                font-size: 14px;
+            }
+
+            .reg-container-left_top img {
+                max-width: 250px;
+            }
+
+            .reg-container-left_bottom h2 {
+                font-size: 32px;
+            }
+
+            .reg-container-left_bottom p {
+                font-size: 18px;
+            }
+
+            .features {
+                margin-top: 30px;
+            }
+
+            .feature-item {
+                font-size: 12px;
+            }
+
+            form {
+                padding: 30px;
+            }
+
+            form h3 {
+                font-size: 24px;
             }
         }
 
         @media (max-width: 480px) {
-
-            /* Сверху — приветствие, снизу — само окно регистрации */
-            body {
-                justify-content: flex-start;
+            .back-link {
+                top: 15px;
+                left: 15px;
+                padding: 8px 15px;
+                font-size: 12px;
             }
 
             .reg-container {
-                padding: 12px;
-                justify-content: flex-start;
+                margin: 50px 10px;
+                padding: 10px;
             }
 
-            /* Левая часть (приветствие) будет сверху */
             .reg-container__left {
                 order: 1;
+                padding: 30px 20px;
             }
 
-            /* Правая часть (форма) будет снизу */
             .reg-container__right {
                 order: 2;
             }
 
-
-            .reg-container__left {
-                min-height: auto;
-                padding: 12px;
-            }
-
             .reg-container-left_top img {
-                max-width: 220px;
-                width: 100%;
-                height: auto;
+                max-width: 200px;
+                width: 80%;
             }
 
             .reg-container-left_bottom h2 {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             .reg-container-left_bottom p {
                 font-size: 14px;
             }
 
+            .features {
+                margin-top: 25px;
+            }
+
             form {
-                padding: 18px;
+                padding: 25px 20px;
+            }
+
+            form h3 {
+                font-size: 20px;
+                margin-bottom: 20px;
             }
 
             form input {
-                padding: 14px;
+                padding: 12px 16px;
+                font-size: 14px;
             }
 
             form .btn {
-                margin-top: 20px;
-                padding: 14px;
-            }
-
-            .continue-with-btns {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
+                padding: 12px;
+                font-size: 14px;
             }
 
             .continue-with-btn {
-                width: 100%;
-                max-width: 210px;
+                padding: 10px 16px;
+                font-size: 12px;
             }
+
+            .feature-item {
+                font-size: 11px;
+            }
+        }
+
+        /* Анимация появления */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reg-container__left {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .reg-container__right {
+            animation: fadeInUp 0.6s ease 0.2s forwards;
+            opacity: 0;
+            animation-fill-mode: forwards;
         }
     </style>
 </head>
 
 <body>
-    <a href="index.html">Главная</a>
+    <!-- Статический фон -->
+    <div class="static-bg"></div>
+    
+    <!-- Оранжевая акцентная линия сверху -->
+    <div class="accent-line"></div>
+    
+    <!-- Декоративные оранжевые круги (статичные) -->
+    <div class="decor-circles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Кнопка назад -->
+    <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        <span>На главную</span>
+    </a>
+
     <div class="reg-container">
+        <!-- Левая часть - приветствие -->
         <div class="reg-container__left">
             <div class="reg-container-left_top">
-                <img src="images/logo-reg.png" alt="">
+                <img src="images/logo-reg.png" alt="Ням.com">
             </div>
             <div class="reg-container-left_bottom">
-                <h2>Добро Пожаловать</h2>
+                <h2>Добро пожаловать</h2>
                 <p>в НЯМ.COM!</p>
+                <div class="features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Быстрая доставка за 30 минут</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Скидка 20% на первый заказ</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Более 100 блюд в меню</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Бесплатная доставка от 1000₽</span>
+                    </div>
+                </div>
             </div>
-
         </div>
 
+        <!-- Правая часть - форма -->
         <div class="reg-container__right">
-            <form action="">
-                <input type="text" placeholder="Логин" maxlength="10" required> <br>
-                <!-- type text - стандартное текстовое поле -->
-                <!-- Placeholder - подсказка для ввода -->
-                <!-- maxlength - максимальная длина лога -->
-                <!-- required - обязательный ввод -->
-
-                <input type="email" placeholder="Email" maxlength="50" required> <br>
-                <!-- type email - дает подсказку если забыл написать @ (собаку) -->
-
-                <input type="password" placeholder="Пароль" minlength="6" required> <br>
-                <!-- type password - скрывает вводимые символы -->
-                <!-- minlength 6 - минимальное количество символов -->
-                <button class="btn">Войти</button>
+            <form action="" method="POST">
+                <h3>
+                    <i class="fas fa-user-plus"></i> Регистрация
+                </h3>
+                <input type="text" placeholder="Логин" maxlength="10" required>
+                <input type="email" placeholder="Email" maxlength="50" required>
+                <input type="password" placeholder="Пароль" minlength="6" required>
+                <input type="password" placeholder="Подтвердите пароль" minlength="6" required>
+                <button class="btn" type="submit">
+                    <i class="fas fa-sign-in-alt"></i> Зарегистрироваться
+                </button>
 
                 <div class="continue-with">
-                    <span>Continue with</span>
+                    <span>Или войдите через</span>
                 </div>
 
-                <div class="Continue-with-btns">
-                    <button class="continue-with-btn">Google</button>
-                    <button class="continue-with-btn">Telegram</button>
-                    <button class="continue-with-btn">Facebook</button>
-                    <button class="continue-with-btn">TikTok</button>
+                <div class="continue-with-btns">
+                    <button class="continue-with-btn" type="button">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="continue-with-btn" type="button">
+                        <i class="fab fa-telegram"></i> Telegram
+                    </button>
+                    <button class="continue-with-btn" type="button">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </button>
+                    <button class="continue-with-btn" type="button">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </button>
+                </div>
+                
+                <div class="login-link">
+                    Уже есть аккаунт? <a href="#">Войти</a>
                 </div>
             </form>
-
-            <div class=""></div>
         </div>
     </div>
 </body>
