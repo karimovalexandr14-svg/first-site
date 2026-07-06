@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="telegram" content="t.me/nftscrapbot?start=battle107-8">
+    <title>Ням.com - Доставка вкусной еды</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #000;
+        color: #fff;
+      }
+      
+      .gradient-cola {
+        background: linear-gradient(45deg, #df6e0c, #fee3d7);
+      }
+      .gradient-pizza {
+        background: linear-gradient(45deg, rgb(255, 206, 0), rgb(255, 193, 131));
+      }
+      .gradient-fri {
+        background: linear-gradient(45deg, rgb(255, 240, 0), rgb(255, 150, 0));
+      }
+      .gradient-sprite {
+        background: linear-gradient(45deg, rgb(169, 255, 0), rgb(100, 206, 0));
+      }
+      .gradient-nagetsi {
+        background: linear-gradient(45deg, rgb(234, 148, 0), rgb(248, 255, 0));
+      }
+      .gradient-gazirovka {
+        background: linear-gradient(45deg, rgb(69, 54, 4), rgb(219, 110, 0));
+      }
+      
+      .product-img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+      }
+      
+      .review-card {
+        background: #2a2a2a;
+        padding: 12px;
+        border-radius: 10px;
+        border-left: 3px solid #ff8c00;
+        margin-bottom: 10px;
+      }
+      .review-author {
+        font-weight: 600;
+        color: #ff8c00;
+        margin-bottom: 5px;
+      }
+      .review-text {
+        font-size: 13px;
+        color: #b0b0b0;
+      }
+      
+      .btn-buy-modal {
+        background: #ff8c00;
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 50px;
+        border: none;
+        font-weight: 600;
+        transition: 0.3s;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+      }
+      .btn-buy-modal:hover {
+        background: #ff5500;
+        color: #fff;
+      }
+      
+      .hover-warning:hover {
+        color: #ffb347 !important;
+      }
+    </style>
+  </head>
+  
+  <body>
+    
+    <header class="bg-dark bg-opacity-25">
+      <div class="container py-3">
+        <div class="row align-items-center">
+          
+          <div class="col-md-4">
+            <h1 class="display-4 fw-normal text-uppercase" style="letter-spacing: 8px;">
+              Ням<span class="text-warning">.com</span>
+            </h1>
+            <p class="text-warning" style="font-size: 22px; line-height: 1;">Когда хочется ням</p>
+          </div>
+          
+          <div class="col-md-5">
+            <ul class="nav">
+              <li class="nav-item"><a class="nav-link text-white" href="#squares">Пицца</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#squares">Бургеры</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#grids">Напитки</a></li>
+            </ul>
+          </div>
+          
+          <div class="col-md-3 text-end">
+            <a href="reg-page.html" class="btn btn-warning text-dark fw-bold px-4 py-2" style="border-radius: 20px;">
+              ВЫХОД
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    
+    <section class="position-relative" style="height: 80vh; background-color: #8B4513; overflow: hidden;">
+      
+      <img src="images/hero.webp" alt="Вкусная еда" 
+           class="position-absolute top-0 start-0 w-100 h-100" 
+           style="object-fit: cover;">
+      
+      <div class="container position-relative h-100 d-flex align-items-center">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="display-1 fw-bold text-white">Доставка вкусной еды</h1>
+            <p class="fs-3 text-white">Самые сочные бургеры, хрустящая картошка фри и освежающие напитки. Быстрая доставка по всему городу!</p>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    
+    <section id="squares" class="py-5">
+      <div class="container">
+        
+        <div class="text-center mb-5">
+          <h2 class="display-4">Наши хиты</h2>
+          <p class="fs-5 text-secondary">Самые популярные блюда, которые выбирают наши гости</p>
+        </div>
+        
+        <div class="row g-4">
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="rounded-4 p-4 text-center text-white d-flex flex-column justify-content-center"
+                 style="height: 300px; cursor: pointer; background-image: url('images/nag.jpg'); background-size: cover; background-position: center;"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="nagetsi">
+              <h3>Хрустящие Нагетсы</h3>
+              <p class="small">Нежные куриные нагетсы в золотистой панировке. Подаются с тремя видами соусов.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="rounded-4 p-4 text-center text-white d-flex flex-column justify-content-center"
+                 style="height: 300px; cursor: pointer; background-image: url('images/piz.jpg'); background-size: cover; background-position: center;"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="pizza">
+              <h3>Пицца Пепперони</h3>
+              <p class="small">Классическая итальянская пицца с острыми колбасками пепперони, сыром моцарелла.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="rounded-4 p-4 text-center text-white d-flex flex-column justify-content-center"
+                 style="height: 300px; cursor: pointer; background-image: url('images/shash.jpg'); background-size: cover; background-position: center;"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="shashlik">
+              <h3>Шашлык из Свинины</h3>
+              <p class="small">Сочный шашлык, приготовленный на углях по особому рецепту. Маринуется 12 часов.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="rounded-4 p-4 text-center text-white d-flex flex-column justify-content-center"
+                 style="height: 300px; cursor: pointer; background-image: url('images/bur.jpg'); background-size: cover; background-position: center;"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="burger">
+              <h3>Двойной Бургер</h3>
+              <p class="small">Две сочные говяжьи котлеты, расплавленный сыр чеддер, хрустящий бекон и свежие овощи.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <section id="grids" class="py-5">
+      <div class="container">
+        
+          <div class="text-center mb-5">
+          	<h2 class="display-4">Популярное меню</h2>
+          	<p class="fs-5 text-warning">Выберите блюда по своему вкусу</p>
+        
+        <div class="row g-4">
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="gradient-cola rounded-4 p-4 h-100 cursor-pointer"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="cola"
+                 style="cursor: pointer;">
+              <div class="d-flex align-items-center">
+                <img src="images/coca-cola.png" alt="Coca-Cola" class="product-img me-3">
+                <h3 class="flex-grow-1 text-center">Coca-Cola</h3>
+              </div>
+              <p class="my-3">Классическая Coca-Cola - освежающий напиток с неповторимым вкусом. Идеально подходит для любого приема пищи.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">150₽</h3>
+                <a href="#" class="btn btn-dark" onclick="event.stopPropagation();">Купить</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="gradient-fri rounded-4 p-4 h-100 cursor-pointer"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="fri"
+                 style="cursor: pointer;">
+              <div class="d-flex align-items-center">
+                <img src="images/Fri.png" alt="Картошка Фри" class="product-img me-3">
+                <h3 class="flex-grow-1 text-center">Картошка Фри</h3>
+              </div>
+              <p class="my-3">Хрустящая картошка фри, приготовленная из свежего картофеля. Золотистая снаружи и мягкая внутри.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">120₽</h3>
+                <a href="#" class="btn btn-dark" onclick="event.stopPropagation();">Купить</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="gradient-nagetsi rounded-4 p-4 h-100 cursor-pointer"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="nagetsi"
+                 style="cursor: pointer;">
+              <div class="d-flex align-items-center">
+                <img src="images/Nagetsi.png" alt="Нагетсы" class="product-img me-3">
+                <h3 class="flex-grow-1 text-center">Куриные Нагетсы</h3>
+              </div>
+              <p class="my-3">Нежные куриные нагетсы в хрустящей панировке. Приготовлены из куриного филе высшего качества.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">180₽</h3>
+                <a href="#" class="btn btn-dark" onclick="event.stopPropagation();">Купить</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="gradient-pizza rounded-4 p-4 h-100 cursor-pointer"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="pizza"
+                 style="cursor: pointer;">
+              <div class="d-flex align-items-center">
+                <img src="images/mini-pizza.png" alt="Пицца" class="product-img me-3">
+                <h3 class="flex-grow-1 text-center">Пицца Маргарита</h3>
+              </div>
+              <p class="my-3">Классическая итальянская пицца на тонком тесте. Состав: томатный соус, свежая моцарелла, ароматный базилик.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">450₽</h3>
+                <a href="#" class="btn btn-dark" onclick="event.stopPropagation();">Купить</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="gradient-sprite rounded-4 p-4 h-100 cursor-pointer"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="sprite"
+                 style="cursor: pointer;">
+              <div class="d-flex align-items-center">
+                <img src="images/sprite.png" alt="Sprite" class="product-img me-3">
+                <h3 class="flex-grow-1 text-center">Sprite</h3>
+              </div>
+              <p class="my-3">Освежающий лимонад с цитрусовым вкусом. Идеально утоляет жажду в жаркий день. Без искусственных красителей.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">130₽</h3>
+                <a href="#" class="btn btn-dark" onclick="event.stopPropagation();">Купить</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="gradient-gazirovka rounded-4 p-4 h-100 cursor-pointer"
+                 data-bs-toggle="modal" data-bs-target="#productModal" data-product="gazirovka"
+                 style="cursor: pointer;">
+              <div class="d-flex align-items-center">
+                <img src="images/gazirovka.png" alt="Fanta" class="product-img me-3">
+                <h3 class="flex-grow-1 text-center">Fanta</h3>
+              </div>
+              <p class="my-3">Апельсиновая газировка с ярким цитрусовым вкусом. Освежает и поднимает настроение. Подается охлажденной.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">130₽</h3>
+                <a href="#" class="btn btn-dark" onclick="event.stopPropagation();">Купить</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <footer class="bg-dark py-5 mt-5" style="background: linear-gradient(180deg, #111 0%, #181818 100%) !important;">
+      <div class="container">
+        
+        <div class="row g-4">
+          
+          <div class="col-lg-4 col-md-6">
+            <img src="images/logo-reg.png" alt="Ням.com" style="width: 140px; margin-bottom: 18px;">
+            <p class="text-secondary">8 888 800 00 00</p>
+            <p class="text-secondary">Karimovalexandr14@mail.com</p>
+          </div>
+          
+          <div class="col-lg-2 col-md-6">
+            <h5 class="text-uppercase mb-3 text-white">Контакты</h5>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">ВКонтакте</a></p>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">Телеграм</a></p>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">MAX</a></p>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">RUTUBE</a></p>
+          </div>
+          
+          <div class="col-lg-2 col-md-6">
+            <h5 class="text-uppercase mb-3 text-white">Каталог</h5>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">Пицца</a></p>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">Бургеры</a></p>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">Напитки</a></p>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">Закуски</a></p>
+          </div>
+          
+          <div class="col-lg-2 col-md-6">
+            <h5 class="text-uppercase mb-3 text-white">Дополнительно</h5>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">О нас</a></p>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">Доставка</a></p>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">Помощь</a></p>
+            <p><a href="#" class="text-secondary text-decoration-none hover-warning">Партнёры</a></p>
+          </div>
+          
+        </div>
+        
+        <div class="text-center text-secondary mt-4 pt-3 border-top border-secondary">
+          <p class="mb-0">© 2026 Ням.com — вкусные решения для вашего меню</p>
+        </div>
+        
+      </div>
+    </footer>
+    
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" style="background: #1a1a1a; border: 2px solid #ff8c00; border-radius: 20px;">
+          
+          <div class="modal-header border-0">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          
+          <div class="modal-body">
+            <div class="row g-4">
+              
+              <div class="col-md-5 text-center">
+                <img id="modalImage" src="" alt="Product" class="img-fluid" style="max-width: 250px; border-radius: 15px;">
+              </div>
+              
+              <div class="col-md-7">
+                <h2 id="modalTitle" class="text-warning"></h2>
+                <p id="modalDescription" class="text-secondary"></p>
+                
+                <div class="mt-3">
+                  <h5 class="text-warning">Отзывы наших клиентов</h5>
+                  <div id="modalReviews" class="mt-2" style="max-height: 200px; overflow-y: auto;"></div>
+                </div>
+                
+                <div class="mt-3">
+                  <h3 id="modalPrice" class="text-warning display-6"></h3>
+                  <a href="reg-page.html" class="btn-buy-modal mt-2">Оформить заказ</a>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      const products = {
+        cola: {
+          name: "Coca-Cola",
+          image: "images/coca-cola.png",
+          description: "Классическая Coca-Cola - освежающий напиток с неповторимым вкусом. Идеально подходит для любого приема пищи и отлично утоляет жажду. Подается в охлажденном виде. Объем: 0.5л.",
+          price: "150₽",
+          reviews: [
+            { author: "Анна С.", text: "Любимая кола! Всегда свежая и холодная." },
+            { author: "Максим К.", text: "Отличный напиток, быстрая доставка." },
+            { author: "Елена П.", text: "Классический вкус, который никогда не надоедает." }
+          ]
+        },
+        fri: {
+          name: "Картошка Фри",
+          image: "images/Fri.png",
+          description: "Хрустящая картошка фри, приготовленная из свежего картофеля. Золотистая снаружи и мягкая внутри. Подается с фирменным соусом. Порция: 150г.",
+          price: "120₽",
+          reviews: [
+            { author: "Иван Н.", text: "Очень вкусная, хрустящая!" },
+            { author: "Ольга М.", text: "Лучшая картошка фри в городе." },
+            { author: "Сергей Д.", text: "Горячая и свежая, отлично подходит к бургеру." }
+          ]
+        },
+        nagetsi: {
+          name: "Куриные Нагетсы",
+          image: "images/Nagetsi.png",
+          description: "Нежные куриные нагетсы в хрустящей панировке. Приготовлены из куриного филе высшего качества. Подаются с тремя видами соусов на выбор: сырный, барбекю или кисло-сладкий. Порция: 200г.",
+          price: "180₽",
+          reviews: [
+            { author: "Алексей П.", text: "Сочные и нежные, отличная панировка." },
+            { author: "Мария И.", text: "Дети просто обожают эти нагетсы!" },
+            { author: "Павел С.", text: "Хорошее мясо, вкусные соусы." }
+          ]
+        },
+        pizza: {
+          name: "Пицца Маргарита",
+          image: "images/mini-pizza.png",
+          description: "Классическая итальянская пицца на тонком тесте. Состав: томатный соус, свежая моцарелла, ароматный базилик и оливковое масло. Диаметр: 30см.",
+          price: "450₽",
+          reviews: [
+            { author: "Роман К.", text: "Настоящая итальянская пицца!" },
+            { author: "Алина С.", text: "Тонкое тесто, много сыра - обалденно." },
+            { author: "Виктор М.", text: "Очень вкусно, буду заказывать еще." }
+          ]
+        },
+        sprite: {
+          name: "Sprite",
+          image: "images/sprite.png",
+          description: "Освежающий лимонад с цитрусовым вкусом. Идеально утоляет жажду в жаркий день. Без искусственных красителей. Объем: 0.5л.",
+          price: "130₽",
+          reviews: [
+            { author: "Даниил Р.", text: "Освежает отлично, вкус как надо." },
+            { author: "Юлия В.", text: "Люблю спрайт, всегда заказываю." },
+            { author: "Андрей Т.", text: "Хорошая газировка, рекомендую." }
+          ]
+        },
+        gazirovka: {
+          name: "Fanta",
+          image: "images/gazirovka.png",
+          description: "Апельсиновая газировка с ярким цитрусовым вкусом. Освежает и поднимает настроение. Подается охлажденной. Объем: 0.5л.",
+          price: "130₽",
+          reviews: [
+            { author: "Глеб О.", text: "Ностальгический вкус, очень нравится." },
+            { author: "Татьяна А.", text: "Хорошая газировка, быстрая доставка." },
+            { author: "Олег И.", text: "Вкусная и освежающая." }
+          ]
+        },
+        shashlik: {
+          name: "Шашлык из Свинины",
+          image: "images/shash.jpg",
+          description: "Сочный шашлык, приготовленный на углях по особому рецепту. Маринуется 12 часов в специях. Подается с соусом и свежими овощами. Порция: 300г.",
+          price: "350₽",
+          reviews: [
+            { author: "Артем Л.", text: "Очень сочный и ароматный!" },
+            { author: "Ирина П.", text: "Лучший шашлык на доставке." },
+            { author: "Владимир С.", text: "Мясо тает во рту." }
+          ]
+        },
+        burger: {
+          name: "Двойной Бургер",
+          image: "images/bur.jpg",
+          description: "Две сочные говяжьи котлеты, расплавленный сыр чеддер, хрустящий бекон, свежие овощи и фирменный соус. Вес: 350г.",
+          price: "380₽",
+          reviews: [
+            { author: "Максим Д.", text: "Огромный и очень вкусный!" },
+            { author: "Анна В.", text: "Сочный бургер, много начинки." },
+            { author: "Денис М.", text: "Лучший бургер в городе." }
+          ]
+        }
+      };
+
+      document.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const productId = button.getAttribute('data-product');
+        const product = products[productId];
+        
+        if (product) {
+          document.getElementById('modalImage').src = product.image;
+          document.getElementById('modalTitle').textContent = product.name;
+          document.getElementById('modalDescription').textContent = product.description;
+          document.getElementById('modalPrice').textContent = product.price;
+          
+          const reviewsContainer = document.getElementById('modalReviews');
+          reviewsContainer.innerHTML = '';
+          
+          product.reviews.forEach(review => {
+            const reviewCard = document.createElement('div');
+            reviewCard.className = 'review-card';
+            reviewCard.innerHTML = `
+              <div class="review-author">${review.author}</div>
+              <div class="review-text">"${review.text}"</div>
+            `;
+            reviewsContainer.appendChild(reviewCard);
+          });
+        }
+      });
+    </script>
+    
+  </body>
+</html>
